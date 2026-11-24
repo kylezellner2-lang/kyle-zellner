@@ -129,7 +129,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .sec-head h2{font-size:clamp(34px,6vw,88px)}
 .sec-head .link{white-space:nowrap;flex:0 0 auto}
 @media (max-width:640px){.sec-head{margin-bottom:28px}.sec-head .link{display:none}}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .card{position:relative;display:block;text-decoration:none;color:var(--fg);overflow:hidden;background:var(--panel)}
 .card .vid{transition:transform 1200ms var(--ease)}
 @media (min-width:901px){.cards .vid{aspect-ratio:3 / 4}}
@@ -444,4 +444,7 @@ button.film:hover .play{background:rgba(255,255,255,.2)}
 .closing .closing-btns .btn{margin-top:0}
 @media (max-width:640px){.closing-btns{margin-top:28px;gap:10px}}
 /* four brand cards: keep the longest name (Insta360) on one line */
-@media (min-width:901px){.cards .card .name{font-size:clamp(20px,2.5vw,40px)}}
+@media (min-width:901px){.cards .card .name{font-size:clamp(18px,2.1vw,34px)}}
+
+/* a tile that opens Instagram instead of the pop-up player */
+a.reel{display:block;text-decoration:none}
