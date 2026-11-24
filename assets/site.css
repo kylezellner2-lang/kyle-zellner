@@ -129,7 +129,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .sec-head h2{font-size:clamp(34px,6vw,88px)}
 .sec-head .link{white-space:nowrap;flex:0 0 auto}
 @media (max-width:640px){.sec-head{margin-bottom:28px}.sec-head .link{display:none}}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .card{position:relative;display:block;text-decoration:none;color:var(--fg);overflow:hidden;background:var(--panel)}
 .card .vid{transition:transform 1200ms var(--ease)}
 @media (min-width:901px){.cards .vid{aspect-ratio:3 / 4}}
@@ -350,7 +350,7 @@ textarea{resize:vertical;min-height:120px}
   .about .where{grid-column:1 / -1;margin-top:0}
 
   /* brand cards and reels: three across */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0;padding:0;overflow:visible}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:0;padding:0;overflow:visible}
   .cards .card{flex:none}
   .card .num{top:8px;left:8px;font-size:8px;letter-spacing:1.2px}
   .card .meta{left:8px;right:6px;bottom:10px}
@@ -438,3 +438,10 @@ button.film:hover .play{background:rgba(255,255,255,.2)}
 @media (max-width:640px){.film .play{width:48px;height:48px;margin:-24px 0 0 -24px}
   .film .play::before{border-left-width:11px;border-top-width:7px;border-bottom-width:7px;margin-left:3px}
 }
+
+/* two buttons under the closing line */
+.closing-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:56px}
+.closing .closing-btns .btn{margin-top:0}
+@media (max-width:640px){.closing-btns{margin-top:28px;gap:10px}}
+/* four brand cards: keep the longest name (Insta360) on one line */
+@media (min-width:901px){.cards .card .name{font-size:clamp(20px,2.5vw,40px)}}
