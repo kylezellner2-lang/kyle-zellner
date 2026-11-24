@@ -185,7 +185,9 @@
     var kind = matchMedia('(min-aspect-ratio: 1/1)').matches ? 'w' : 't';
     var prep = function (i) {
       var v = $('video', slides[i]);
-      if (!v.src) { v.muted = true; v.poster = v.dataset.hero + '-' + kind + '.jpg'; v.src = v.dataset.hero + '-' + kind + '.mp4'; v.load(); }
+      // the ?v= changes on every publish, so a phone never mixes a cached older cut with the new file
+      var q = v.dataset.v ? '?v=' + v.dataset.v : '';
+      if (!v.src) { v.muted = true; v.poster = v.dataset.hero + '-' + kind + '.jpg' + q; v.src = v.dataset.hero + '-' + kind + '.mp4' + q; v.load(); }
       return v;
     };
     var first = prep(0);
