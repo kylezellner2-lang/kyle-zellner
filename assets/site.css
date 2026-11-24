@@ -161,7 +161,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .scrolled .nav{mix-blend-mode:normal}
 .scrolled .nav::before{opacity:1}
 /* ------------------------------------------------ numbers */
-.figs{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;padding-top:48px;border-top:1px solid var(--rule)}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding-top:48px;border-top:1px solid var(--rule)}
 .fig .n{font-family:var(--display);font-weight:900;letter-spacing:-0.035em;line-height:1;
   font-size:clamp(40px,5.2vw,88px);font-variant-numeric:tabular-nums}
 .fig .label{margin-top:14px;color:var(--muted)}
@@ -437,4 +437,4 @@ button.film:hover .play{background:rgba(255,255,255,.2)}
 .lead-play{margin-top:26px;cursor:pointer}
 @media (max-width:640px){.film .play{width:48px;height:48px;margin:-24px 0 0 -24px}
   .film .play::before{border-left-width:11px;border-top-width:7px;border-bottom-width:7px;margin-left:3px}
-  .figs .fig:last-child{grid-column:1 / -1}}
+}
