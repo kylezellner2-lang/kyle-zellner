@@ -98,10 +98,10 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--bg)}
 .hero-fade{position:absolute;inset:0;background:var(--panel)}
 @keyframes heroIn{from{opacity:0}to{opacity:1}}
-.js .hero-fade{animation:heroIn 1600ms var(--ease) both}
-.hs{position:absolute;inset:0;opacity:0;transition:opacity 450ms ease-in-out}
+/* no fade-in on the header: an opacity animation ending over a playing video makes iPhones flash black */
+.hs{position:absolute;inset:0;opacity:0;transition:opacity 450ms ease-in-out;background-size:cover;background-position:center}
 .hs.on{opacity:1}
-.hs video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.001)}
+.hs video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 180ms linear}
 .hs.on video{animation:none}
 @keyframes heroDrift{from{transform:scale(1.001)}to{transform:scale(1.07)}}
 .hero-shade{position:absolute;inset:0;pointer-events:none;

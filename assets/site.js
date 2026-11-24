@@ -187,7 +187,16 @@
       var v = $('video', slides[i]);
       // the ?v= changes on every publish, so a phone never mixes a cached older cut with the new file
       var q = v.dataset.v ? '?v=' + v.dataset.v : '';
-      if (!v.src) { v.muted = true; v.poster = v.dataset.hero + '-' + kind + '.jpg' + q; v.src = v.dataset.hero + '-' + kind + '.mp4' + q; v.load(); }
+      if (!v.src) {
+        // iPhones paint a video black for a moment between its poster and its first frame. So the still sits
+        // behind the video as a background, and the video stays invisible until it is really showing frames.
+        var still = v.dataset.hero + '-' + kind + '.jpg' + q;
+        slides[i].style.backgroundImage = 'url("' + still + '")';
+        v.style.opacity = '0';
+        var show = function () { if (v.currentTime > 0.08) { v.style.opacity = '1'; v.removeEventListener('timeupdate', show); } };
+        v.addEventListener('timeupdate', show);
+        v.muted = true; v.src = v.dataset.hero + '-' + kind + '.mp4' + q; v.load();
+      }
       return v;
     };
     var first = prep(0);
