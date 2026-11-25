@@ -67,6 +67,7 @@
   }, { rootMargin: '300px 0px' });
   $$('video[data-src]').forEach(function (v) {
     if (v.hasAttribute('data-desktop') && !desktop.matches) return;
+    if (v.hasAttribute('data-phone') && desktop.matches) return;
     v.muted = true; loader.observe(v);
   });
   // iOS sometimes refuses the first autoplay; the first touch or scroll kicks it
