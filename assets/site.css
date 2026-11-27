@@ -468,3 +468,11 @@ a.reel{display:block;text-decoration:none}
 /* Skyhook project header: the three vertical shots side by side on desktop, the single vertical cut on phones */
 .lead3 video[data-phone]{display:none}
 @media (max-width:900px){.lead3 video[data-desktop]{display:none}.lead3 video[data-phone]{display:block}}
+.reel .views.sm.flag{display:inline-block;background:#fff;color:#000;padding:3px 7px;border-radius:3px;opacity:1;margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px;font-size:11px}
+
+.lead-copy .idea{font-family:var(--display);font-size:clamp(26px,3vw,42px);line-height:1.15;max-width:22ch}
+.lead-copy .handle{font-size:18px;max-width:40ch}
+.lead-copy .scope{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0}
+.lead-copy .scope li{border:1px solid var(--line);padding:9px 14px}
+.next-stunt{padding:120px 0 110px}
+@media (max-width:640px){.lead-copy .scope li{padding:7px 11px}.next-stunt{padding:80px 0 72px}}
